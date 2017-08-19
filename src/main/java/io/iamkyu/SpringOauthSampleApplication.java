@@ -2,12 +2,14 @@ package io.iamkyu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import javax.annotation.PostConstruct;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"io.iamkyu"})
 public class SpringOauthSampleApplication {
 
     public static void main(String[] args) {
@@ -15,10 +17,15 @@ public class SpringOauthSampleApplication {
     }
 
     @PostConstruct
-    private void init() {
+    private void setFacebookAccessFields() {
         try {
             String[] fieldsToMap = {
-                    "id", "about", "age_range", "birthday", "context", "cover", "currency", "devices", "education", "email", "favorite_athletes", "favorite_teams", "first_name", "gender", "hometown", "inspirational_people", "installed", "install_type","is_verified", "languages", "last_name", "link", "locale", "location", "meeting_for", "middle_name", "name", "name_format","political", "quotes", "payment_pricepoints", "relationship_status", "religion", "security_settings", "significant_other","sports", "test_group", "timezone", "third_party_id", "updated_time", "verified", "viewer_can_send_gift","website", "work"
+                "id", "about", "age_range", "birthday", "context", "cover", "currency", "devices", "education",
+                "email", "favorite_athletes", "favorite_teams", "first_name", "gender", "hometown", "inspirational_people",
+                "installed", "install_type","is_verified", "languages", "last_name", "link", "locale", "location",
+                "meeting_for", "middle_name", "name", "name_format","political", "quotes", "payment_pricepoints",
+                "relationship_status", "religion", "security_settings", "significant_other","sports", "test_group",
+                "timezone", "third_party_id", "updated_time", "verified", "viewer_can_send_gift","website", "work"
             };
 
             Field field = Class.forName("org.springframework.social.facebook.api.UserOperations").
