@@ -17,6 +17,11 @@
             background: url('/image/facebook-btn.png') center top no-repeat;
             background-size: 254px 40px;
         }
+
+        .twitter-btn {
+            background: url('/image/twitter-btn.png') center top no-repeat;
+            background-size: 254px 40px;
+        }
     </style>
 </head>
 <body>
@@ -43,14 +48,17 @@
     <h3>Sign in with</h3>
 
     <ul>
-        <div im
         <a class="login-btn facebook-btn" onclick="document.facebook.submit();" />
-
+        <a class="login-btn twitter-btn" onclick="document.twitter.submit();" />
     </ul>
 
     <!-- /.container -->
     <form action="/auth/facebook" name="facebook">
         <input type="hidden" name="scope" value="email,user_friends"/>
+    </form>
+
+    <form action="/auth/twitter" name="twitter">
+        <input type="hidden" name="scope" value="email"/>
     </form>
 </div>
 </body>
