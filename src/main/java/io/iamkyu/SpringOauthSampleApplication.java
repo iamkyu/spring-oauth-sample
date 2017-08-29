@@ -2,14 +2,12 @@ package io.iamkyu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 import javax.annotation.PostConstruct;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"io.iamkyu"})
 public class SpringOauthSampleApplication {
 
     public static void main(String[] args) {
