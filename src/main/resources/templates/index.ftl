@@ -48,8 +48,8 @@
     <h3>Sign in with</h3>
 
     <ul>
-        <a class="login-btn facebook-btn" onclick="document.facebook.submit();" />
-        <a class="login-btn twitter-btn" onclick="document.twitter.submit();" />
+        <a class="login-btn facebook-btn" onclick="document.facebook.submit();"></a>
+        <a class="login-btn twitter-btn" onclick="document.twitter.submit();"></a>
     </ul>
 
     <!-- /.container -->
